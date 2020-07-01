@@ -69,4 +69,6 @@ function! TaskwikiFoldText()
   return short_text.len_text.repeat(' ', 500)
 endfunction
 
-setlocal foldtext=TaskwikiFoldText()
+if !exists('g:taskwiki_disable_foldtext')
+  setlocal foldtext=TaskwikiFoldText()
+endif
